@@ -58,14 +58,12 @@
     color: black;
   }
   
-  /* Create two unequal columns that floats next to each other */
-  /* Left column */
+ 
   .leftcolumn {   
     float: left;
     width: 75%;
   }
   
-  /* Right column */
   .rightcolumn {
     float: right;
     width: 25%;
@@ -73,7 +71,6 @@
     padding-left: 10px;
   }
   
-  /* Fake image */
   .imagem {
     background-color: #aaa;
     width: 100%;
@@ -92,7 +89,6 @@
     text-shadow: 3px 3px 30px blueviolet;
   }
   
-  /* Add a card effect for articles */
   .card {
     text-align: center;
     box-shadow: 0px 5px 10px 10px gray;
@@ -102,7 +98,6 @@
     border-radius: 20px;
   }
   
-  /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;
@@ -117,10 +112,33 @@
     padding: 20px;
     margin-top: 30px;
     text-align: center;
-    background: #aaa;
+    background-color: rgba(0, 0, 255, 0.7);
+  }
+
+  ul {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-left: 30px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
   }
   
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  ul li {
+    width: calc(33.33% - 2em);
+    margin-right: 2em;
+    margin-bottom: 1em;
+  }
+  
+  ul li img {
+    max-width: 100%;
+  }
+  
+  ul li a {
+    color: #6200EE; /* paleta azul-roxo */
+    text-decoration: none;
+  }
+  
   @media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {   
       width: 100%;
@@ -128,7 +146,6 @@
     }
   }
   
-  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
   @media screen and (max-width: 400px) {
     .topnav a {
       float: none;
