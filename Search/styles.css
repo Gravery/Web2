@@ -1,28 +1,46 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+* {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Noto Serif', sans-serif;
+    background: rgba(0, 0, 255, 0.3);
+}
 
-.main-container{
+.header {
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    background: url('../imagens/banner_placeholder.jpg') 0 0;
+}
+
+.header h1 {
+    color: white;
+    font-size: 50px;
+}
+
+.main-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    background-color: rgba(0, 0, 255, 0.3);
+    min-height: 100vh;
     flex-shrink: 0;
 }
 
-.main-title{
+.main-title {
     padding: 8px;
     margin-top: 12px;
     text-align: center;
+    text-decoration-line: underline;
+    text-shadow: 3px 3px 30px blueviolet;
 }
 
-.content-container{
+.content-container {
     overflow: auto;
     flex-grow: 1;
-    flex-shrink: 0;
     background-color: #f2f2f2;
     margin: 24px 8vw;
     border-radius: 20px;
@@ -30,29 +48,35 @@
     background-color: rgba(70, 70, 70, 0.2);
 }
 
-.header-container{
+.header-container {
     display: flex;
     flex-direction: column;
     min-height: 180px;
-    background-color: beige;
     justify-content: space-between;
 }
-.navbar{
-    background-color:  rgba(0, 0, 255, 0.7);
+
+.navbar {
+    overflow: hidden;
+    background-color: rgba(0, 0, 255, 0.7);
 }
 
-.navbar a{
-        float: left;
-        
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+.navbar a {
+    float: left;
+
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 
 }
 
-.header-content-container{
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.header-content-container {
 
     display: flex;
     flex-wrap: wrap;
@@ -61,38 +85,47 @@
     padding: 12px;
     gap: 8px;
 }
+.searchbar-icon{
+    margin-left: 4px;
+    align-self: center;
+}
 
-.filter-button{
+.filter-button {
     background-color: rgba(0, 0, 255, 0.7);
     padding: 12px 16px;
     color: #f2f2f2;
     font-size: 1rem;
     border-style: none;
     border-radius: 20px;
-    
-
+    cursor: pointer;
+    transition: 0.1s;
 }
 
-.searchbar-container{
+.filter-button:hover{
+    background-color: rgba(0, 0, 255);
+}
+
+
+.searchbar-container {
     display: flex;
     justify-content: center;
     width: 80%;
     min-width: 180px;
     max-width: 600px;
-    
+
 }
 
-#searchbar-main-content{
+#searchbar-main-content {
     padding-left: 8px;
     border-radius: 20px;
     flex-grow: 1;
-    
-    
+
+
     min-height: 2rem;
 
 }
 
-.grid-container{
+.grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 14px 28px;
@@ -101,12 +134,12 @@
 
 }
 
-.card-game-image{
+.card-game-image {
     width: 100%;
     max-height: 320px;
 }
 
-.card-game-container{
+.card-game-container {
     overflow: auto;
     border-radius: 10px;
     width: 100%;
@@ -116,19 +149,48 @@
     border: solid 1px black;
 }
 
-.title-card{
+.title-card {
     padding-top: 4px;
     text-align: center;
     text-decoration: underline;
     font-size: 1.25rem;
+    text-shadow: 3px 3px 30px blueviolet;
 }
 
-.subtitle{
-    padding: 4px;
+.subtitle {
+    margin-top: 8px;
+    padding: 8px 16px;
     text-align: justify;
 }
 
-.footer-container{
+.footer-container {
     min-height: 80px;
     background-color: rgba(0, 0, 255, 0.7);
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 960px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }

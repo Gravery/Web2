@@ -4,7 +4,7 @@ body {
     background: rgba(0, 0, 255, 0.3);
   }
 
-  .topnav {
+.topnav {
     overflow: hidden;
     background-color: rgba(0, 0, 255, 0.7);
   }
